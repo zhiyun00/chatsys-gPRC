@@ -1,0 +1,12 @@
+// msg.proto
+syntax = "proto3"; // 规定使用proto3的语法
+ 
+service MsgService { // 定义服务, 流数据放到括号里面
+	rpc GetMsg (stream Message) returns (stream Message);
+}
+
+message Message {
+        int32 type = 1;
+        string user = 2;
+        string msg = 3;
+}
